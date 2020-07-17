@@ -2,41 +2,10 @@ import React from 'react';
 
 class CartItem extends React.Component{
 
-    increaseQuantity(){
-        // Set State -- If Previous State is required
-        // this.setState((prevState) => {
-        //     return {
-        //         qty : prevState.qty+1
-        //     }
-        // });
-
-        // Other Way 
-        this.setState({
-            qty:this.state.qty+1
-        });
-
-    }
-
-    decreaseQuantity(){
-        if(this.state.qty === 0){
-            return
-        }
-        this.setState((prevState) => {
-            return {
-                qty : prevState.qty-1
-            }
-        });
-    }
-
-    clearQuantity(){
-        this.setState((prevState) => {
-            return {
-                qty : 0
-            }
-        });
-    }
     render(){
         const {qty,price,title} = this.props.product;
+        const {product,onDecreaseQty,onDelete,onIncreaseQty} = this.props;
+
         return(
         <div className="cart-item">
 
@@ -52,17 +21,18 @@ class CartItem extends React.Component{
                 <img 
                     className="icons" 
                     src='https://image.flaticon.com/icons/svg/864/864378.svg'
-                    onClick={this.increaseQuantity.bind(this)}
+                    onClick={()=>onIncreaseQty(product)}
                 />
                 <img 
                     className="icons" 
                     src="https://image.flaticon.com/icons/svg/864/864373.svg"
-                    onClick={this.decreaseQuantity.bind(this)}
+                    onClick={()=>onDecreaseQty(product)}
                 />
                 <img 
                     className="icons" 
                     src='https://image.flaticon.com/icons/svg/1214/1214428.svg'
-                    onClick={this.clearQuantity.bind(this)}
+                    onClick={()=>onDelete(product.id)}
+
 
                 />
 
