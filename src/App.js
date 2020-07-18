@@ -99,7 +99,7 @@ class App extends React.Component{
               onDelete={this.handleDeleteProduct}
             />
             <div>
-              Total : {this.getCartTotal()}
+              Total : Rs {this.getCartTotal()}
             </div>
       </div>
     );
