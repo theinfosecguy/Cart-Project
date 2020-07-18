@@ -5,7 +5,7 @@ const NavBar = (props)=>{
         return(
             <div className='nav' style={styles.nav}> 
                 <div style={styles.cartIconContainer}>
-                    <img src="https://image.flaticon.com/icons/svg/2121/2121815.svg" alt="Waiting" style={styles.cartIcon}></img>
+                    <i class="fas fa-cart-plus" style={styles.cartIcon}></i>
                     <span style={styles.cartCount}>{props.count}</span>
                 </div>
             </div>
@@ -15,21 +15,24 @@ const NavBar = (props)=>{
 
 const styles = {
     cartIcon: {
+      color:'white',
       height: 32,
-      marginRight: 20
+      marginRight: 20,
+      fontSize:34
     },
     nav: {
       height: 70,
-      background: '#CCC',
+      background: 'black',
       display: 'flex',
       justifyContent: 'flex-end',
-      alignItems: 'center'
+      alignItems: 'center',
+      color:'white'
     },
     cartIconContainer: {
       position: 'relative'
     },
     cartCount: {
-      background: 'lightgrey',
+      background: '#ECECEC',
       border:'1px solid grey',
       borderRadius: '50%',
       padding: '4px 8px',
@@ -38,7 +41,8 @@ const styles = {
       top: -9,
       height:15,
       width:7,
-      fontSize:12
+      fontSize:12,
+      color:'black'
     }
   };
 

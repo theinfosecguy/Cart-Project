@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,7 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.5rem;
+  background-color: #1A1A1A;
+  font-family: 'Montserrat', sans-serif;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -14,8 +19,14 @@ code {
 }
 
 .cart-item{
+  box-sizing: border-box;
   display: inline-flex;
   margin: 1rem 1rem;
+  width: 35%;
+  padding: 5px;
+  background: #F4F4F4;
+  box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.25);  border-radius: 10px;
+
 }
 
 .cart-item .right-block{
@@ -33,4 +44,6 @@ code {
 .cart{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

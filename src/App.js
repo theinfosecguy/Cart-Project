@@ -98,11 +98,24 @@ class App extends React.Component{
               onDecreaseQty={this.handleDecreaseQty}
               onDelete={this.handleDeleteProduct}
             />
-            <div>
+            <div style={styles.textTotal}>
               Total : Rs {this.getCartTotal()}
             </div>
       </div>
     );
+  }
+}
+
+const styles={
+  textTotal:{
+    color:'black',
+    padding: 5,
+    background: '#F4F4F4',
+    borderRadius:10,
+    width:'30%',
+    margin:'auto',
+    textAlign:'center',
+    marginBottom:10
   }
 }
 export default App;
