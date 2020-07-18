@@ -10,24 +10,24 @@ class App extends React.Component{
     this.state = {
         products : [
         {
-            price:99,
+            price:999,
             title:'Watch',
             qty:0,
-            img:'',
+            img:'https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             id:1
         },
         {
-            price:999,
-            title:'Smart Watch',
+            price:23999,
+            title:'iPhone',
             qty:0,
-            img:'',
+            img:'https://images.pexels.com/photos/265658/pexels-photo-265658.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             id:2
         },
         {
-            price:9999,
-            title:'Apple Watch',
+            price:88234,
+            title:'MacBook Air',
             qty:0,
-            img:'',
+            img:'https://images.pexels.com/photos/1229861/pexels-photo-1229861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
             id:3
 
         }
@@ -77,6 +77,16 @@ class App extends React.Component{
       })
       return count
     }
+
+    getCartTotal = ()=>{
+      const {products} = this.state;
+      let cartTotal = 0;
+      products.forEach((product)=>{
+        cartTotal += cartTotal + product.qty*product.price;
+      })
+      return cartTotal
+    }
+
   render(){
     const {products} = this.state;
     return (
@@ -88,6 +98,9 @@ class App extends React.Component{
               onDecreaseQty={this.handleDecreaseQty}
               onDelete={this.handleDeleteProduct}
             />
+            <div>
+              Total : {this.getCartTotal()}
+            </div>
       </div>
     );
   }
